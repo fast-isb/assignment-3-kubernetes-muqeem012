@@ -20,7 +20,7 @@ spec:
       # this is the specification of pods
       containers:
         - name: containerfront1
-          image: frontend1:latest
+          image: muqeem/frontend1:latest
           ports:
            - containerPort: 3000
           env:

@@ -20,7 +20,7 @@ spec:
       # this is the specification of pods
       containers:
         - name: containerback1
-          image: backend1:latest
+          image: muqeem/backend1:latest
           ports:
            - containerPort: 8000
           env:
