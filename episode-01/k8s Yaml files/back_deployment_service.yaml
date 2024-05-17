@@ -24,8 +24,10 @@ spec:
           ports:
            - containerPort: 8000
           env:
-            - MONGO_URI=mongodb://mongodb-service/episode1
-            - PORT=8000
+            - name: MONGO_URI
+              value: "mongodb://mongodb-service/episode1"
+            - name: PORT
+              value: 8000
 
 ---
 # Yaml for making the external service for backend1 deployment

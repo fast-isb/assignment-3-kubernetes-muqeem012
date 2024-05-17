@@ -24,7 +24,8 @@ spec:
           ports:
            - containerPort: 3000
           env:
-            - REACT_APP_BASEURL=http://ip172-18-0-18-cp3icf28dsgg009aei0g.direct.labs.play-with-k8s.com:32010
+            - name: REACT_APP_BASEURL
+              value: "http://ip172-18-0-18-cp3icf28dsgg009aei0g.direct.labs.play-with-k8s.com:32010"
 
 ---
 # Yaml for making the external service for frontend1 deployment
