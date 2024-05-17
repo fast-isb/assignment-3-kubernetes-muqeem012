@@ -27,7 +27,7 @@ spec:
             - name: MONGO_URI
               value: "mongodb://mongodb-service/episode1"
             - name: PORT
-              value: 8000
+              value: "8000"
 
 ---
 # Yaml for making the external service for backend1 deployment
