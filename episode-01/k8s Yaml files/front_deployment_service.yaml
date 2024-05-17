@@ -1,0 +1,46 @@
+# Yaml code for creating a deployment and service of episode 1 frontend
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend1-deployment
+  labels:
+    app: frontend1
+
+specs:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend1
+  
+  template:
+    metadata:
+      labels:
+        app: frontend1
+    spec:
+      # this is the specification of pods
+      containers:
+        - name: containerfront1
+          image: frontend1:latest
+          ports:
+           - containerPort: 3000
+          env:
+            - REACT_APP_BASEURL=http://ip172-18-0-18-cp3icf28dsgg009aei0g.direct.labs.play-with-k8s.com:32010
+
+---
+# Yaml for making the external service for frontend1 deployment
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend1-service
+
+spec:
+  type: NodePort
+  selector:
+    app: frontend1
+
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+      nodePort: 32011
